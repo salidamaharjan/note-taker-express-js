@@ -1,7 +1,14 @@
 const express = require('express');
-
-const api = express();
+const path = require('path');
+const app = express();
 const PORT = 3000;
 
+// using middle ware
+app.use(express.static('public'));
+
+app.get('/notes', (req, res) => 
+res.sendFile(path.join(__dirname, 'public', 'notes.html')));
+
+
 // starting the server at PORT 3000;
-api.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
