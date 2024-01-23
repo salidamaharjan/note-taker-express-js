@@ -36,5 +36,21 @@ app.post("/api/notes", async (req, res) => {
   res.json(jsonData);
 });
 
+// deleting the data with the matching request id and updating the db file
+app.delete("/api/notes/:id", async (req, res) => {
+  console.log(req.params.id);
+  const reqId = req.params.id;
+  const fileData = await fsPromises.readFile("./db/db.json", "utf-8");
+  // console.log("fileData", fileData);
+  const jsonData = JSON.parse(fileData);
+  console.log("jsonData", jsonData);
+  const filteredData = jsonData.filter((data) => {
+    return data.id !== reqId;
+  });
+  console.log("filteredData", filteredData);
+  await fsPromises.writeFile("./db/db.json", JSON.stringify(filteredData));
+  res.json(filteredData);
+});
+
 // starting the server at PORT 3000;
 app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
