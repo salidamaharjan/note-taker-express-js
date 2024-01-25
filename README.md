@@ -39,6 +39,12 @@
 * Create a heroku app using `heroku create app-name` command.
 * Deploy to heroku using `git push heroku` command.
 * Note: When defining express port you need to use `process.env.PORT`
+* To deploy in heroku using specific node version add following to package.json
+```json
+"engines": {
+    "node": "18.x"
+}
+```
 
 ## Credits
 * BootCamp course work, instructor and tutor session.
