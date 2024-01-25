@@ -20,10 +20,11 @@
 6. [Contact](#contact)
 
 ## Installation
-* Install Node.js
-* Install Express.js
-* 
+* Node.js
+
 ## Run
+* Use `npm i` to install the dependencies
+* Use `npm start` to run the project
 
 ## Usage
 * User can create a note, save them and delete it when task completed.
