@@ -3,7 +3,7 @@
 
 [GitHub Repo link](https://github.com/salidamaharjan/note-taker-express-js)
 
-[Deployed page link](https://salidamaharjan.github.io/note-taker-express-js/)
+[Deployed Heroku link]()
 
 ## Description
 * This project is completed to build a note taker app.
